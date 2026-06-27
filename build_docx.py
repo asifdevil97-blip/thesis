@@ -166,6 +166,72 @@ def image_placeholder(caption, w=None):
                    '<w:jc w:val="center"/><w:spacing w:after="160"/>')
     return box + cap
 
+# ---------- score-composition charts (native Word, no image libs) ----------
+def _bar_item(label, value, scale_max, color, lblw=3000):
+    barw = PAGE_W - lblw
+    filled = max(120, int(round(value / float(scale_max) * barw)))
+    if filled > barw: filled = barw
+    rem = barw - filled
+    nb = _nilbord("top", "left", "bottom", "right")
+    cells = ['<w:tc><w:tcPr><w:tcW w:w="%d" w:type="dxa"/>%s<w:vAlign w:val="center"/></w:tcPr>'
+             '<w:p><w:pPr><w:spacing w:after="0"/></w:pPr>%s</w:p></w:tc>' % (
+                 lblw, nb, run_xml(label, {"sz": 20})),
+             '<w:tc><w:tcPr><w:tcW w:w="%d" w:type="dxa"/>%s'
+             '<w:shd w:val="clear" w:color="auto" w:fill="%s"/><w:vAlign w:val="center"/></w:tcPr>'
+             '<w:p><w:pPr><w:jc w:val="center"/><w:spacing w:after="0"/></w:pPr>%s</w:p></w:tc>' % (
+                 filled, nb, color, run_xml(str(value), {"sz": 18, "b": True, "color": "FFFFFF"}))]
+    grid = '<w:gridCol w:w="%d"/><w:gridCol w:w="%d"/>' % (lblw, filled)
+    if rem > 60:
+        cells.append('<w:tc><w:tcPr><w:tcW w:w="%d" w:type="dxa"/>%s'
+                     '<w:shd w:val="clear" w:color="auto" w:fill="F2F2F2"/></w:tcPr><w:p/></w:tc>' % (rem, nb))
+        grid += '<w:gridCol w:w="%d"/>' % rem
+    allnil = "".join('<w:%s w:val="nil"/>' % s for s in ("top", "left", "bottom", "right", "insideH", "insideV"))
+    return ('<w:tbl><w:tblPr><w:tblW w:w="%d" w:type="dxa"/><w:tblLayout w:type="fixed"/>'
+            '<w:tblBorders>%s</w:tblBorders></w:tblPr><w:tblGrid>%s</w:tblGrid>'
+            '<w:tr>%s</w:tr></w:tbl>') % (PAGE_W, allnil, grid, "".join(cells))
+
+def bar_chart(items, scale_max, footnote=None):
+    out = [_bar_item(lbl, val, scale_max, col) for (lbl, val, col) in items]
+    if footnote:
+        out.append(raw_para(run_xml(footnote, {"i": True, "sz": 18, "color": "595959"}),
+                            '<w:spacing w:before="40" w:after="120"/>'))
+    out.append(para())
+    return "".join(out)
+
+def likert_strip():
+    labels = [("1", "Very dissatisfied", "F8696B"), ("2", "Dissatisfied", "FCE4D6"),
+              ("3", "Neutral", "FFEB9C"), ("4", "Satisfied", "C6E0B4"),
+              ("5", "Very satisfied", "63BE7B")]
+    w = PAGE_W // 5
+    grid = "".join('<w:gridCol w:w="%d"/>' % w for _ in labels)
+    cells = ""
+    for num, desc, color in labels:
+        p = ('<w:p><w:pPr><w:jc w:val="center"/><w:spacing w:after="0"/></w:pPr>%s</w:p>'
+             '<w:p><w:pPr><w:jc w:val="center"/><w:spacing w:before="0" w:after="0"/></w:pPr>%s</w:p>') % (
+            run_xml(num, {"b": True, "sz": 26}), run_xml(desc, {"sz": 16}))
+        cells += ('<w:tc><w:tcPr><w:tcW w:w="%d" w:type="dxa"/>'
+                  '<w:shd w:val="clear" w:color="auto" w:fill="%s"/><w:vAlign w:val="center"/></w:tcPr>%s</w:tc>') % (w, color, p)
+    border = "".join('<w:%s w:val="single" w:sz="8" w:space="0" w:color="FFFFFF"/>' % s
+                     for s in ("top", "left", "bottom", "right", "insideH", "insideV"))
+    return ('<w:tbl><w:tblPr><w:tblW w:w="%d" w:type="dxa"/><w:jc w:val="center"/>'
+            '<w:tblLayout w:type="fixed"/><w:tblBorders>%s</w:tblBorders></w:tblPr>'
+            '<w:tblGrid>%s</w:tblGrid><w:tr><w:trPr><w:trHeight w:val="700"/></w:trPr>%s</w:tr></w:tbl>') % (
+        PAGE_W, border, grid, cells) + para()
+
+def kss_chart():
+    return bar_chart([("Objective Knee Score", 100, "4472C4"),
+                      ("Functional Activity Score", 100, "70AD47"),
+                      ("Patient Satisfaction Score", 40, "ED7D31"),
+                      ("Patient Expectations Score", 15, "FFC000")],
+                     100, footnote="Maximum attainable score per subscale (range 0\u2013100). Higher = better outcome.")
+
+def womac_chart():
+    return bar_chart([("Pain", 20, "C00000"),
+                      ("Stiffness", 8, "ED7D31"),
+                      ("Physical Function", 68, "4472C4"),
+                      ("Total", 96, "7030A0")],
+                     96, footnote="Item maxima (Total range 0\u201396). Higher = worse symptoms.")
+
 # ---------- cover page (matches the departmental thesis-protocol template) ----------
 def _nilbord(*sides):
     return "<w:tcBorders>%s</w:tcBorders>" % "".join('<w:%s w:val="nil"/>' % s for s in sides)
@@ -335,6 +401,12 @@ def process(lines, page_break_sections=False):
                                  base={"i": True}))
             elif num == 5:
                 body.append(two_stage_flowchart())
+            elif num == 8:
+                body.append(kss_chart())
+            elif num == 9:
+                body.append(womac_chart())
+            elif num == 10:
+                body.append(likert_strip())
             else:
                 body.append(image_placeholder("Figure %d image to be inserted." % num))
             i += 1

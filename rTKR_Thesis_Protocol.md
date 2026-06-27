@@ -53,6 +53,13 @@ SGMC & KEM HOSPITAL
 | Figure 5 | Two-stage revision algorithm for PJI | Section 5.14 |
 | Figure 6 | Study design / patient flow diagram | Section 5.10 |
 | Figure 7 | Radiological component alignment measurement | Section 5.14 |
+| Figure 8 | KSS 2011 subscale composition (bar chart) | Section 5.12 |
+| Figure 9 | WOMAC subscale composition (bar chart) | Section 5.12 |
+| Figure 10 | Patient satisfaction 5-point Likert response scale | Section 5.12 |
+| Figure 11 | Knee Society Score 2011 assessment form | Section 5.12 |
+| Figure 12 | WOMAC Osteoarthritis Index questionnaire | Section 5.12 |
+
+*(Figures are listed by reference number; for the final dissertation they may be renumbered in strict order of appearance.)*
 
 ---
 
@@ -335,6 +342,16 @@ Results & Conclusions
 - **Patient Satisfaction Questionnaire:** A study-specific 5-item questionnaire scored on a 5-point Likert scale (overall satisfaction, pain relief, walking, stair climbing, daily activities). Total score range 5–25. As this is not an independently validated instrument, its internal consistency will be assessed (Cronbach's alpha) within the study cohort, and the KSS 2011 Patient Satisfaction subscale will be reported alongside it for corroboration.
 
 **Instrument permissions/licensing.** The Knee Society Score 2011 and the WOMAC index are copyrighted instruments. Permission/licence for their use will be obtained from the respective copyright holders (The Knee Society and the WOMAC/OMERACT licensing authority) prior to data collection. Validated Hindi and Marathi translations of WOMAC will be used under appropriate permission and cited in the final dissertation.
+
+**Score direction (important for data entry and analysis):** For the KSS and its Patient Satisfaction subscale, **higher scores indicate a better** outcome; for **WOMAC and VAS, higher scores indicate worse** symptoms. This opposite direction must be observed during data entry and interpretation.
+
+The following visual summaries illustrate the composition of each instrument (rendered as charts in the Word version):
+
+- **Figure 8:** KSS 2011 subscale composition — maximum attainable score per subscale.
+- **Figure 9:** WOMAC subscale composition — Pain, Stiffness and Physical Function (Total 0–96).
+- **Figure 10:** Patient satisfaction 5-point Likert response scale.
+- **Figure 11:** Knee Society Score 2011 assessment form. *[Insert official KSS 2011 form — © The Knee Society; reproduce only with permission]*
+- **Figure 12:** WOMAC Osteoarthritis Index questionnaire. *[Insert official WOMAC questionnaire — reproduce only with permission]*
 
 **5.13 STATISTICAL ANALYSIS:**
 
