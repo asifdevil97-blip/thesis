@@ -6,8 +6,34 @@
 
 **THESIS PROTOCOL**
 
-- **Chief Investigator:** Dr. Mohan M. Desai, Professor and Head of the Department, Department of Orthopaedics, SGMC & KEM Hospital
-- **Co-Investigator:** Dr. Asif Ahmed, Junior Resident, Department of Orthopaedics, SGMC & KEM Hospital
+**Submitted to the Maharashtra University of Health Sciences (MUHS), Nashik**
+**In partial fulfilment of the requirements for the degree of M.S. (Orthopaedics)**
+
+---
+
+### TITLE PAGE
+
+| Field | Details |
+|-------|---------|
+| **Title of study** | Evaluating Clinico-Radiological Outcomes and Patient Satisfaction Following Revision Total Knee Replacement: A Comprehensive Cohort Study |
+| **Department** | Orthopaedics |
+| **Institution** | Seth G.S. Medical College & K.E.M. Hospital, Parel, Mumbai 400012 |
+| **Candidate (Co-Investigator)** | Dr. Asif Ahmed, Junior Resident (Postgraduate Student) |
+| **MUHS Registration No.** | __________________________ *(to be filled by candidate)* |
+| **Year of registration** | __________ *(to be filled by candidate)* |
+| **Guide (Chief Investigator)** | Dr. Mohan M. Desai, Professor & Head, Department of Orthopaedics |
+| **Co-Guide** | __________________________ *(if applicable)* |
+| **Academic year** | 2026–2027 |
+
+**Signatures**
+
+| Role | Name | Signature | Date |
+|------|------|-----------|------|
+| Candidate / Co-Investigator | Dr. Asif Ahmed | ____________ | ________ |
+| Guide / Chief Investigator | Dr. Mohan M. Desai | ____________ | ________ |
+| Co-Guide (if applicable) | __________________ | ____________ | ________ |
+| Head of Department | Dr. Mohan M. Desai | ____________ | ________ |
+| Dean, Seth G.S.M.C. & K.E.M.H. | __________________ | ____________ | ________ |
 
 ---
 
@@ -88,7 +114,7 @@ This study aims to evaluate the clinico-radiological outcomes and patient satisf
 1. To study the demographic profile and indications for revision total knee replacement in our patient cohort.
 2. To assess the clinical outcomes of revision TKR using validated scoring systems—the Knee Society Score (KSS 2011) and the Western Ontario and McMaster Universities Osteoarthritis Index (WOMAC).
 3. To evaluate the radiological outcomes including component alignment, radiolucent lines, and signs of loosening using the Knee Society Roentgenographic Evaluation and Scoring System.
-4. To assess patient satisfaction following revision TKR using a validated patient satisfaction questionnaire.
+4. To assess patient satisfaction following revision TKR using a study-specific patient satisfaction questionnaire.
 5. To identify factors influencing clinical and radiological outcomes including age, sex, BMI, indication for revision, degree of bone loss (AORI classification), type of implant constraint, use of stems and augments, and single-stage versus two-stage revision.
 6. To document the complications and re-revision rates in the study cohort and to perform implant survivorship analysis.
 
@@ -111,7 +137,7 @@ This study aims to evaluate the clinico-radiological outcomes and patient satisf
 
 **5.2 STUDY SETTING:** Department of Orthopaedics, Seth G.S. Medical College and KEM Hospital, Parel, Mumbai 400012. This is a tertiary care teaching hospital and a high-volume arthroplasty centre.
 
-**5.3 STUDY DURATION:** February 2025 to June 2027 (approximately 2.5 years).
+**5.3 STUDY DURATION:** July 2026 to June 2028 (approximately 2 years), comprising a retrospective record-review arm and a prospective enrolment arm (see Section 5.5).
 
 **5.4 STUDY POPULATION:** All patients who have undergone or will undergo revision total knee replacement at our institution during the defined study period.
 
@@ -164,8 +190,8 @@ n_recruit = 30 / (1 − 0.20) = 30 / 0.80 = 37.5 ≈ 38 patients
 
 Accordingly, the study aims to **recruit 38 patients** in order to retain a minimum of **30 evaluable patients** at final analysis. This target provides adequate statistical power while remaining consistent with the institutional revision TKR volume during the study period. All consecutive eligible patients will be enrolled (universal/consecutive sampling).
 
-- **Retrospective arm:** Patients who underwent revision TKR from January 2020 to January 2025 with available records.
-- **Prospective arm:** Patients undergoing revision TKR from February 2025 to December 2026.
+- **Retrospective arm:** Patients who underwent revision TKR from January 2021 to June 2026 with available records and adequate follow-up.
+- **Prospective arm:** Patients undergoing revision TKR from August 2026 to December 2027, followed up for a minimum of 6 months.
 
 Statistical advice has been sought from the Department of Preventive and Social Medicine (Biostatistics), Seth G.S. Medical College and KEM Hospital. The final sample size and power assumptions will be confirmed with the institutional biostatistician prior to IEC submission.
 
@@ -198,7 +224,7 @@ Statistical advice has been sought from the Department of Preventive and Social 
 7. **Clinical Success:** KSS improvement of ≥10 points (MCID) from baseline, stable well-fixed implant, and no re-revision at latest follow-up.
 8. **Clinical Failure:** Need for re-revision for any cause, OR radiological loosening, OR persistent pain with KSS improvement below MCID.
 9. **Re-revision:** Any subsequent surgical procedure on the same knee involving component exchange, removal, or addition after the index revision.
-10. **Patient Satisfaction:** Measured on a validated 5-point Likert scale; total score ≥15/25 = Satisfied, <15/25 = Not Satisfied.
+10. **Patient Satisfaction:** Measured on a study-specific 5-point Likert scale; total score ≥15/25 = Satisfied, <15/25 = Not Satisfied.
 11. **Minimum Follow-up:** Six months from revision surgery (or Stage 2 reimplantation in two-stage cases).
 
 **5.9 STUDY VARIABLES:**
@@ -229,7 +255,7 @@ Statistical advice has been sought from the Department of Preventive and Social 
 **5.10 PATIENT FLOW DIAGRAM:**
 
 ```
-All patients undergoing Revision TKR at KEM Hospital (January 2020 – December 2026)
+All patients undergoing Revision TKR at KEM Hospital (January 2021 – December 2027)
         |
         v
 Assessed for Eligibility
@@ -240,7 +266,7 @@ Assessed for Eligibility
 Enrolled / Final Cohort (recruit n = 38; target ≥30 evaluable)
         |
         v
-Retrospective Arm (Jan 2020 – Jan 2025) + Prospective Arm (Feb 2025 – Dec 2026)
+Retrospective Arm (Jan 2021 – Jun 2026) + Prospective Arm (Aug 2026 – Dec 2027)
         |
         v
 Outcome Assessment: Clinical (KSS, WOMAC, VAS, ROM), Radiological (KS zones, alignment),
@@ -271,14 +297,16 @@ Results & Conclusions
 | Clinical – Function | KSS 2011 (Functional Activity Score) + WOMAC |
 | Pain | VAS Pain Score |
 | Radiological | Knee Society Roentgenographic Evaluation System |
-| Patient Satisfaction | Validated 5-point Likert satisfaction scale |
+| Patient Satisfaction | Study-specific 5-item Likert satisfaction questionnaire |
 | Complications | Descriptive documentation |
 | Survivorship | Kaplan-Meier with re-revision as endpoint |
 
 - **KSS 2011:** Four subscales—Objective Knee Score (0–100), Functional Activity Score (0–100), Patient Satisfaction Score (0–40), Patient Expectations Score (0–15).
 - **WOMAC:** 24 items—Pain (0–20), Stiffness (0–8), Physical Function (0–68), Total (0–96). Validated Hindi/Marathi versions used.
 - **Knee Society Roentgenographic System:** Femoral (7 zones), Tibial (7 zones), Patellar (3 zones); radiolucent line width (mm); progressive vs non-progressive.
-- **Patient Satisfaction Questionnaire:** 5 items on Likert scale (overall, pain relief, walking, stair climbing, daily activities). Total 5–25.
+- **Patient Satisfaction Questionnaire:** A study-specific 5-item questionnaire scored on a 5-point Likert scale (overall satisfaction, pain relief, walking, stair climbing, daily activities). Total score range 5–25. As this is not an independently validated instrument, its internal consistency will be assessed (Cronbach's alpha) within the study cohort, and the KSS 2011 Patient Satisfaction subscale will be reported alongside it for corroboration.
+
+**Instrument permissions/licensing.** The Knee Society Score 2011 and the WOMAC index are copyrighted instruments. Permission/licence for their use will be obtained from the respective copyright holders (The Knee Society and the WOMAC/OMERACT licensing authority) prior to data collection. Validated Hindi and Marathi translations of WOMAC will be used under appropriate permission and cited in the final dissertation.
 
 **5.13 STATISTICAL ANALYSIS:**
 
@@ -295,6 +323,8 @@ Data analyzed using SPSS version 26.0 (IBM Corp.).
 - **Kaplan-Meier survival analysis with log-rank test:** Implant survivorship with re-revision as endpoint.
 - **Significance level:** p < 0.05; 95% confidence intervals reported.
 
+> **Note on analysis scope.** The study is formally powered only for the **primary paired comparison** (pre- vs post-operative KSS). Given the target of ~30 evaluable patients, the subgroup comparisons (Objective 5) and the multivariable regression and Kaplan–Meier survivorship analyses (Objectives 5–6) are **exploratory and hypothesis-generating**: with limited events per variable, regression models will be kept parsimonious (pre-specified, ≤3 predictors) to avoid overfitting, and their findings will be interpreted with caution and reported with confidence intervals rather than as definitive associations.
+
 **5.14 FIGURES INCLUDED:**
 
 - **Figure 1:** AORI Classification of bone defects (Engh & Ammeen, 1999). *[Insert image — source: Instr Course Lect. 1999;48:167–175]*
@@ -310,13 +340,14 @@ Data analyzed using SPSS version 26.0 (IBM Corp.).
 ## 6. ETHICAL CONSIDERATIONS
 
 1. Approval from the Institutional Ethics Committee (IEC), Seth G.S. Medical College and KEM Hospital, will be obtained before commencement.
-2. Written informed consent will be obtained from all participants in the language best understood by them (English, Hindi, or Marathi).
-3. Confidentiality of patient data will be strictly maintained. Data will be coded and stored securely. Only investigators will have access.
-4. The study is purely observational and involves no additional intervention, investigation, or procedure beyond standard of care.
-5. Participation is voluntary. Patients may withdraw at any time without any effect on their ongoing treatment.
-6. No financial burden will be imposed on patients.
-7. The study will be conducted in accordance with the Declaration of Helsinki (2013 revision) and the ICMR National Ethical Guidelines for Biomedical and Health Research Involving Human Participants (2017).
-8. All data will be used solely for academic and research purposes.
+2. **Prospective arm:** Written informed consent will be obtained from all prospectively enrolled participants in the language best understood by them (English, Hindi, or Marathi) before any study-related assessment.
+3. **Retrospective arm:** For the retrospective record-review arm, the investigators will request a **waiver of written informed consent** from the IEC, as permitted under the ICMR National Ethical Guidelines (2017), because the research uses pre-existing, routinely collected clinical and radiographic records, carries no more than minimal risk, the waiver will not adversely affect participants' rights or welfare, and obtaining consent from all past patients (some untraceable or deceased) is impracticable. Where retrospective patients return for follow-up or can be contacted, consent (written or documented telephonic) will be obtained for any additional follow-up assessment. All retrospective data will be fully de-identified and coded.
+4. Confidentiality of patient data will be strictly maintained. Data will be coded and stored securely. Only investigators will have access.
+5. The study is purely observational and involves no additional intervention, investigation, or procedure beyond standard of care.
+6. Participation is voluntary. Patients may withdraw at any time without any effect on their ongoing treatment.
+7. No financial burden will be imposed on patients.
+8. The study will be conducted in accordance with the Declaration of Helsinki (2013 revision) and the ICMR National Ethical Guidelines for Biomedical and Health Research Involving Human Participants (2017).
+9. All data will be used solely for academic and research purposes, and de-identified data will be retained securely for the period required by institutional policy.
 
 ---
 
@@ -324,15 +355,17 @@ Data analyzed using SPSS version 26.0 (IBM Corp.).
 
 | Activity | Timeline |
 |----------|----------|
-| Protocol preparation & IEC submission | February 2025 – April 2025 |
-| IEC approval | May 2025 |
-| Retrospective data collection | May 2025 – July 2025 |
-| Prospective patient enrollment | June 2025 – December 2026 |
-| Follow-up assessments | Ongoing (June 2025 – March 2027) |
-| Data compilation & entry | January 2027 – March 2027 |
-| Statistical analysis | April 2027 – May 2027 |
-| Thesis writing | May 2027 – July 2027 |
-| Thesis submission to MUHS | August 2027 |
+| Protocol preparation & IEC submission | June 2026 – July 2026 |
+| IEC approval | August 2026 |
+| Retrospective data collection (Jan 2021 – Jun 2026 cases) | August 2026 – October 2026 |
+| Prospective patient enrollment | September 2026 – December 2027 |
+| Follow-up assessments | Ongoing (September 2026 – March 2028) |
+| Data compilation & entry | January 2028 – February 2028 |
+| Statistical analysis | March 2028 – April 2028 |
+| Thesis writing | April 2028 – June 2028 |
+| Thesis submission to MUHS | As per MUHS examination schedule (≈ mid-2028) |
+
+*(Dates are indicative and will be aligned to the candidate's MUHS examination cycle and the actual date of IEC approval.)*
 
 ---
 
@@ -341,6 +374,16 @@ Data analyzed using SPSS version 26.0 (IBM Corp.).
 **Conflict of Interest:** The investigators declare that there is no conflict of interest associated with this study.
 
 **Funding:** This study will not receive any external funding. All resources will be provided by the institution as part of routine patient care. No additional financial burden will be placed on patients or the institution.
+
+**Budget:** As the study is observational and uses investigations performed as part of standard care, no study-specific costs are incurred. An indicative budget is provided below for completeness.
+
+| Item | Justification | Estimated Cost (INR) |
+|------|---------------|----------------------|
+| Investigations / radiographs | Performed as routine standard of care | Nil (study-specific) |
+| Printing of CRFs, information sheets & consent forms | Stationery / photocopying | 2,000 |
+| Data management (software, storage) | SPSS available via institution; secure storage | Nil / institutional |
+| Miscellaneous & contingency | Telephonic follow-up, printing of dissertation | 3,000 |
+| **Total** | | **≈ 5,000 (borne by the candidate)** |
 
 **Plagiarism Declaration:** I hereby declare that this protocol is my original work, prepared under the guidance of my Chief Investigator. All sources of information have been duly acknowledged and cited. This work has been checked for plagiarism as per MUHS guidelines.
 
@@ -370,25 +413,25 @@ Data analyzed using SPSS version 26.0 (IBM Corp.).
 
 11. Stroobant L, Ackerman T, Vermue H, et al. Revision knee arthroplasty in a tertiary center: infection remains the leading cause for primary revisions, while aseptic loosening leads causes for re-revisions. *J Arthroplasty.* 2025 (Epub ahead of print). doi:10.1016/j.arth.2025.02.045. PMID: 39983932.
 
-12. Why are primary total knee arthroplasties failing? A systematic review and meta-analysis. *J Arthroplasty.* 2025 (Epub ahead of print). PMID: 40349863. *(Reported leading etiologies: PJI 22.3%, aseptic loosening 20.5%.)*
+12. [Author list to be completed from PubMed]. Why are primary total knee arthroplasties failing? A systematic review and meta-analysis. *J Arthroplasty.* 2025 (Epub ahead of print). PMID: 40349863. *(Reported leading etiologies: PJI 22.3%, aseptic loosening 20.5%.)*
 
-13. Septic complications are on the rise and aseptic loosening has decreased in total joint arthroplasty: an updated complication-based analysis using worldwide arthroplasty registers. *Arch Orthop Trauma Surg.* 2024;144(8):3573–3585. doi:10.1007/s00402-024-05379-2. PMID: 38795186.
+13. [Author list to be completed from PubMed]. Septic complications are on the rise and aseptic loosening has decreased in total joint arthroplasty: an updated complication-based analysis using worldwide arthroplasty registers. *Arch Orthop Trauma Surg.* 2024;144(8):3573–3585. doi:10.1007/s00402-024-05379-2. PMID: 38795186.
 
 14. Salimy MS, Paschalidis A, et al. Patients consistently report worse outcomes following revision total knee arthroplasty compared to primary total knee arthroplasty. *J Arthroplasty.* 2023;38(12):2685–2690. PMID: 37572718.
 
-15. Assessment of patient satisfaction following revision total knee arthroplasty. 2023. PMID: 36881523. *(Mean satisfaction 8.17/10; 85% would undergo surgery again.)*
+15. [Author list to be completed from PubMed]. Assessment of patient satisfaction following revision total knee arthroplasty. [Journal per PubMed]. 2023. PMID: 36881523. *(Mean satisfaction 8.17/10 and Mahomed Satisfaction Scale mean 87.7.)*
 
 16. Winther SB, Klaksvik J, Wik TS, et al. Higher dissatisfaction rate following revision compared with primary total knee arthroplasty: 1-year follow-up of 2151 primary and 235 aseptic revision surgeries. *Orthopedics.* 2023;46(2):e73–e79. doi:10.3928/01477447-20221031-09.
 
-17. Survival, functional outcome and satisfaction of first revision total knee arthroplasty at a mean eleven-year follow-up. *Eur J Orthop Surg Traumatol.* 2023;33(2):415–424. doi:10.1007/s00590-022-03206-1.
+17. [Author list to be completed from PubMed]. Survival, functional outcome and satisfaction of first revision total knee arthroplasty at a mean eleven-year follow-up. *Eur J Orthop Surg Traumatol.* 2023;33(2):415–424. doi:10.1007/s00590-022-03206-1.
 
-18. Patient-reported outcome measures (pain, function, and quality of life) after aseptic revision total knee arthroplasty. *J Arthroplasty.* 2021;36(7S):S345–S350. PMID: 33086349.
+18. [Author list to be completed from PubMed]. Patient-reported outcome measures (pain, function, and quality of life) after aseptic revision total knee arthroplasty. *J Arthroplasty.* 2021;36(7S):S345–S350. PMID: 33086349.
 
 19. Lim PL, Kumar AR, Melnic CM, et al. Revision total knee arthroplasty achieves minimal clinically important difference faster than primary total knee arthroplasty. *J Arthroplasty.* 2025;40(3):732–737.
 
 20. Mortazavi SMJ, Molligan J, Austin MS, Purtill JJ, Hozack WJ, Parvizi J. Failure following revision total knee arthroplasty: infection is the major cause. *Int Orthop.* 2011;35(8):1157–1164.
 
-> **Reference verification note.** Citations 11–19 were checked against PubMed/journal records during preparation. A small number of author lists and exact page ranges for entries 12, 13, 15, 17, and 18 should be re-confirmed using the PubMed "Cite" button before final submission to MUHS, as some were only partially indexed at the time of writing.
+> **Reference verification note.** Stable identifiers (DOI/PMID) are provided for all recent entries. The author lists marked "[to be completed from PubMed]" for references 12, 13, 15, 17 and 18 (and the journal name for reference 15) must be filled in using the PubMed **Cite** button before final submission to MUHS — these were not fully indexed in the snippets available at the time of preparation. Do not submit with the bracketed placeholders in place.
 
 ---
 
@@ -628,27 +671,99 @@ I hereby give my informed consent to participate.
 
 ---
 
-### INFORMED CONSENT FORM (MARATHI)
+### INFORMED CONSENT FORM (HINDI) — सूचित सहमति पत्र (हिंदी)
 
-**Abhyasache shirshak:** Revision Total Knee Replacement nantarchya clinico-radiological parinamancha ani rugna samadhanacha mulyankana: ek sarvasamaveshak cohort abhyas
+**अध्ययन का शीर्षक:** रिविजन टोटल नी रिप्लेसमेंट (घुटने के पुनः प्रत्यारोपण) के बाद क्लिनिको-रेडियोलॉजिकल परिणामों एवं रोगी संतुष्टि का मूल्यांकन: एक व्यापक कोहोर्ट अध्ययन
 
-**Sanstha:** Asthivyangopchar Vibhag, Shaskiya Vaidyakiya Mahavidyalaya ani KEM Rugnalay, Parel, Mumbai
+**संस्थान:** अस्थिरोग विभाग, सेठ जी.एस. मेडिकल कॉलेज एवं के.ई.एम. अस्पताल, परेल, मुंबई 400012
+**मुख्य अन्वेषक:** डॉ. मोहन एम. देसाई, प्रोफेसर एवं विभागाध्यक्ष
+**सह-अन्वेषक:** डॉ. आसिफ अहमद, जूनियर रेज़िडेंट
 
-**Rugna Mahiti Patrak**
+**रोगी सूचना पत्र**
 
-Priya sahabhagi, aapnalas eka sanshodhan abhyasat sahabhagi honyasathi aamantrit kele jaat aahe. Ha abhyas revision gudgha pratyaropan shastrakriyenantarchya clinical parinam (vedana, haalchaal, karyakshamata), X-ray parinam ani aaple samadhan yancha mulyankana karto.
+प्रिय सहभागी,
 
-Sahabhag purnapane aicchik aahe. Sahabhagi na zhalyas aapnalya upcharanvar parinam honar nahi. Ya abhyasasathi konateehi atirikt shastrakriya, injection kinva rakt tapasni keli janar nahi. Aapli sarv mahiti gopniya thevli jail.
+आपको एक शोध अध्ययन में भाग लेने के लिए आमंत्रित किया जा रहा है। निर्णय लेने से पहले कृपया निम्नलिखित जानकारी ध्यानपूर्वक पढ़ें।
 
-**Sanmati Patra**
+**यह अध्ययन किस बारे में है?** यह अध्ययन रिविजन घुटना प्रत्यारोपण शल्यक्रिया के बाद नैदानिक परिणामों (दर्द, हलचल, कार्यक्षमता), रेडियोलॉजिकल (एक्स-रे) परिणामों तथा आपकी संतुष्टि का मूल्यांकन करता है।
 
-Mi, _________________________________ (nav), varil mahiti vachli aahe / mala samjavun sangnyaat ali aahe. Mala abhyasache svarup ani uddesh samajle aahe. Mi ya abhyasat sahabhagi honyaas mazi sanmati deto/dete.
+**मुझे क्यों चुना गया है?** आपने के.ई.एम. अस्पताल में रिविजन घुटना प्रत्यारोपण करवाया है या करवाने वाले हैं।
 
-- Sahabhagiche nav: _________________________
-- Sahi / Angthyacha thasa: _________________________
-- Tarikh: _________________________
-- Sanshodhakacha nav va sahi: _________________________
-- Sakshidaracha nav va sahi: _________________________
+**क्या भाग लेना अनिवार्य है?** नहीं। भागीदारी पूर्णतः स्वैच्छिक है। भाग न लेने पर आपके उपचार पर कोई प्रभाव नहीं पड़ेगा। आप बिना कारण बताए कभी भी अध्ययन से हट सकते हैं।
+
+**मुझे क्या करना होगा?** हम आपके चिकित्सकीय विवरण दर्ज करेंगे, फॉलो-अप के दौरान आपके घुटने की जांच करेंगे, एक्स-रे (नियमित देखभाल का हिस्सा) लेंगे, और घुटने की कार्यक्षमता, दर्द एवं संतुष्टि से संबंधित प्रश्नावली भरवाएंगे। इस अध्ययन के लिए कोई अतिरिक्त शल्यक्रिया, इंजेक्शन या रक्त जांच नहीं की जाएगी।
+
+**क्या कोई जोखिम है?** भाग लेने से कोई अतिरिक्त जोखिम नहीं है। मानक देखभाल से परे कोई प्रक्रिया नहीं की जाएगी।
+
+**क्या कोई लाभ है?** आपको प्रत्यक्ष लाभ नहीं होगा, परंतु आपकी भागीदारी भविष्य के रोगियों की देखभाल सुधारने में सहायक होगी।
+
+**गोपनीयता:** आपकी समस्त जानकारी पूर्णतः गोपनीय रखी जाएगी। किसी भी प्रकाशन में आपकी पहचान उजागर नहीं की जाएगी।
+
+**नैतिक स्वीकृति:** इस अध्ययन को संस्थागत आचार समिति (IEC), के.ई.एम. अस्पताल द्वारा स्वीकृति प्राप्त है।
+
+**संपर्क:** डॉ. आसिफ अहमद (सह-अन्वेषक), फोन: __________; डॉ. मोहन एम. देसाई (मुख्य अन्वेषक), अस्थिरोग विभाग, के.ई.एम. अस्पताल।
+
+**सहमति पत्र**
+
+मैं, _________________________________ (नाम), ने उपरोक्त जानकारी पढ़ ली है / मुझे समझा दी गई है। मैं अध्ययन के स्वरूप एवं उद्देश्य को समझता/समझती हूँ। मेरे सभी प्रश्नों के उत्तर संतोषजनक रूप से दिए गए हैं।
+
+मैं समझता/समझती हूँ कि मेरी भागीदारी स्वैच्छिक है, मैं कभी भी अपने उपचार पर प्रभाव डाले बिना हट सकता/सकती हूँ, मेरी जानकारी गोपनीय रखी जाएगी, और केवल इस अध्ययन के लिए कोई अतिरिक्त प्रक्रिया नहीं की जाएगी।
+
+मैं स्वेच्छा से इस अध्ययन में भाग लेने हेतु अपनी सूचित सहमति देता/देती हूँ।
+
+- सहभागी का नाम: _________________________
+- हस्ताक्षर / अंगूठे का निशान: _________________________
+- दिनांक: _________________________
+- अन्वेषक का नाम एवं हस्ताक्षर: _________________________
+- साक्षी का नाम एवं हस्ताक्षर: _________________________
+
+---
+
+### INFORMED CONSENT FORM (MARATHI) — सूचित संमती पत्र (मराठी)
+
+**अभ्यासाचे शीर्षक:** रिव्हिजन टोटल नी रिप्लेसमेंट (गुडघा पुनर्प्रत्यारोपण) नंतरच्या क्लिनिको-रेडिओलॉजिकल परिणामांचे व रुग्ण समाधानाचे मूल्यांकन: एक सर्वसमावेशक कोहॉर्ट अभ्यास
+
+**संस्था:** अस्थिव्यंगोपचार विभाग, शासकीय वैद्यकीय महाविद्यालय (सेठ जी.एस.) व के.ई.एम. रुग्णालय, परेल, मुंबई 400012
+**मुख्य संशोधक:** डॉ. मोहन एम. देसाई, प्राध्यापक व विभागप्रमुख
+**सह-संशोधक:** डॉ. आसिफ अहमद, कनिष्ठ निवासी डॉक्टर
+
+**रुग्ण माहिती पत्रक**
+
+प्रिय सहभागी,
+
+आपल्याला एका संशोधन अभ्यासात सहभागी होण्यासाठी आमंत्रित केले जात आहे. निर्णय घेण्यापूर्वी कृपया खालील माहिती काळजीपूर्वक वाचा.
+
+**हा अभ्यास कशाबद्दल आहे?** हा अभ्यास रिव्हिजन गुडघा प्रत्यारोपण शस्त्रक्रियेनंतरच्या क्लिनिकल परिणामांचे (वेदना, हालचाल, कार्यक्षमता), रेडिओलॉजिकल (एक्स-रे) परिणामांचे व आपल्या समाधानाचे मूल्यांकन करतो.
+
+**मला का निवडले गेले?** आपण के.ई.एम. रुग्णालयात रिव्हिजन गुडघा प्रत्यारोपण केले आहे किंवा करणार आहात.
+
+**सहभागी होणे आवश्यक आहे का?** नाही. सहभाग पूर्णपणे ऐच्छिक आहे. सहभागी न झाल्यास आपल्या उपचारांवर कोणताही परिणाम होणार नाही. आपण कोणतेही कारण न देता कधीही अभ्यासातून बाहेर पडू शकता.
+
+**मला काय करावे लागेल?** आम्ही आपली वैद्यकीय माहिती नोंदवू, फॉलो-अप भेटींमध्ये आपल्या गुडघ्याची तपासणी करू, एक्स-रे (नियमित उपचाराचा भाग) घेऊ, आणि गुडघ्याची कार्यक्षमता, वेदना व समाधान याबाबत प्रश्नावली भरून घेऊ. या अभ्यासासाठी कोणतीही अतिरिक्त शस्त्रक्रिया, इंजेक्शन किंवा रक्त तपासणी केली जाणार नाही.
+
+**काही धोका आहे का?** सहभागी होण्याने कोणताही अतिरिक्त धोका नाही. मानक उपचारांपलीकडे कोणतीही प्रक्रिया केली जाणार नाही.
+
+**काही फायदा आहे का?** आपल्याला प्रत्यक्ष फायदा नाही, परंतु आपला सहभाग भविष्यातील रुग्णांची काळजी सुधारण्यास मदत करेल.
+
+**गोपनीयता:** आपली सर्व माहिती पूर्णपणे गोपनीय ठेवली जाईल. कोणत्याही प्रकाशनात आपली ओळख उघड केली जाणार नाही.
+
+**नैतिक मान्यता:** या अभ्यासास संस्थात्मक नैतिक समिती (IEC), के.ई.एम. रुग्णालय यांची मान्यता मिळाली आहे.
+
+**संपर्क:** डॉ. आसिफ अहमद (सह-संशोधक), फोन: __________; डॉ. मोहन एम. देसाई (मुख्य संशोधक), अस्थिव्यंगोपचार विभाग, के.ई.एम. रुग्णालय.
+
+**संमती पत्र**
+
+मी, _________________________________ (नाव), वरील माहिती वाचली आहे / मला समजावून सांगण्यात आली आहे. मला अभ्यासाचे स्वरूप व उद्देश समजले आहेत. माझ्या सर्व प्रश्नांची उत्तरे समाधानकारकरीत्या देण्यात आली आहेत.
+
+मला समजते की माझा सहभाग ऐच्छिक आहे, मी माझ्या उपचारांवर परिणाम न होता कधीही बाहेर पडू शकतो/शकते, माझी माहिती गोपनीय ठेवली जाईल, आणि केवळ या अभ्यासासाठी कोणतीही अतिरिक्त प्रक्रिया केली जाणार नाही.
+
+मी स्वेच्छेने या अभ्यासात सहभागी होण्यासाठी माझी सूचित संमती देतो/देते.
+
+- सहभागीचे नाव: _________________________
+- सही / अंगठ्याचा ठसा: _________________________
+- दिनांक: _________________________
+- संशोधकाचे नाव व सही: _________________________
+- साक्षीदाराचे नाव व सही: _________________________
 
 ---
 
