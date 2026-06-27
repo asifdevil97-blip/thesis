@@ -56,6 +56,20 @@
 
 ---
 
+## LIST OF FIGURES
+
+| Figure | Title | Appears in |
+|--------|-------|------------|
+| Figure 1 | AORI classification of bone defects (Engh & Ammeen, 1999) | Section 5.14 |
+| Figure 2 | Knee Society roentgenographic evaluation zones | Section 5.14 |
+| Figure 3 | Levels of implant constraint (PS, CCK, RHK) | Section 5.14 |
+| Figure 4 | Metaphyseal sleeves and tantalum cones | Section 5.14 |
+| Figure 5 | Two-stage revision algorithm for PJI | Section 5.14 |
+| Figure 6 | Study design / patient flow diagram | Section 5.10 |
+| Figure 7 | Radiological component alignment measurement | Section 5.14 |
+
+---
+
 ## 1. LIST OF ABBREVIATIONS
 
 | | |
@@ -281,11 +295,39 @@ Results & Conclusions
 
 **5.11 DATA COLLECTION:**
 
-**A. PREOPERATIVE PARAMETERS:** Demographics (age, sex, BMI, comorbidities [DM, HTN, IHD, RA, CKD, hypothyroidism], ASA grade, smoking/tobacco history); primary surgery details (date, side, indication, implant type and brand, fixation method, hospital, previous revisions, time interval to revision); indication for revision (aseptic loosening, PJI, instability, periprosthetic fracture, wear, malalignment, stiffness, extensor mechanism failure, unexplained pain); clinical assessment (ROM, stability [AP/ML], extensor mechanism, walking aid, KSS, WOMAC, VAS pain); radiological assessment (AP standing, lateral, skyline, full-length scanogram; mechanical axis; α/β/γ/δ angles; radiolucent lines [KS zones]; AORI bone defect classification; joint line position; Insall-Salvati ratio); laboratory investigations (CBC, ESR, CRP, serum albumin, HbA1c, urea/creatinine, coagulation profile; joint aspirate when PJI suspected).
+**A. PREOPERATIVE PARAMETERS**
 
-**B. INTRAOPERATIVE PARAMETERS:** Anaesthesia type, tourniquet use/duration; surgical approach (medial parapatellar, subvastus, lateral, TTO, quadriceps snip, V-Y turndown) and reason for extensile exposure; intraoperative findings (soft tissue condition, collateral/PCL status, extensor mechanism, metallosis, synovitis, osteolytic cavities, membrane samples); bone defect (intraoperative AORI confirmation for femur and tibia, patellar bone stock); implant (brand/model, constraint level [PS/CCK/RHK], component sizes, polyethylene thickness/type, patella management); stems (femoral and tibial; cemented/press-fit; length; diameter); augments (distal femoral, posterior condylar, tibial; sizes); metaphyseal fixation (sleeves, tantalum cones); bone grafting; cement (plain vs antibiotic-loaded); for two-stage cases (Stage 1 findings, spacer type, organism, interim antibiotics, serial ESR/CRP, repeat aspirate, Stage 2 findings/cultures); operative time, estimated blood loss, intraoperative complications.
+- **Demographics:** age, sex, BMI, comorbidities (DM, HTN, IHD, RA, CKD, hypothyroidism), ASA grade, smoking/tobacco history.
+- **Primary surgery details:** date, side, indication, implant type and brand, fixation method, hospital, previous revisions, time interval to revision.
+- **Indication for revision:** aseptic loosening, PJI, instability, periprosthetic fracture, wear, malalignment, stiffness, extensor mechanism failure, unexplained pain.
+- **Clinical assessment:** ROM, stability (AP/ML), extensor mechanism, walking aid, KSS, WOMAC, VAS pain.
+- **Radiological assessment:** AP standing, lateral, skyline and full-length scanogram; mechanical axis; α/β/γ/δ angles; radiolucent lines (KS zones); AORI bone defect classification; joint line position; Insall–Salvati ratio.
+- **Laboratory investigations:** CBC, ESR, CRP, serum albumin, HbA1c, urea/creatinine, coagulation profile; joint aspirate (cell count, differential, Gram stain, culture, alpha-defensin) when PJI suspected.
 
-**C. POSTOPERATIVE PARAMETERS:** Immediate (0–6 weeks): hospital stay, ICU admission, mobilization day, weight-bearing status, drain output, transfusion, postoperative haemoglobin, DVT prophylaxis, wound status, rehabilitation milestones, discharge details. Follow-up schedule: 6 weeks, 3 months, 6 months, 1 year, latest follow-up. Clinical assessment at each visit (ROM, KSS, WOMAC, VAS, stability, extensor mechanism, walking aid, stair climbing, ability to squat/sit cross-legged). Radiological assessment at each visit (AP/lateral radiographs; scanogram at 6 months and 1 year; component alignment; radiolucent lines [progressive vs non-progressive]; signs of loosening; joint line position; patellar tracking; heterotopic ossification [Brooker]). Complications: early and late. Re-revision: date, indication, interval, procedure. Mortality: cause and relation to surgery.
+**B. INTRAOPERATIVE PARAMETERS**
+
+- **Anaesthesia & tourniquet:** anaesthesia type; tourniquet use and duration.
+- **Surgical approach:** medial parapatellar / subvastus / lateral / TTO / quadriceps snip / V-Y turndown; reason for any extensile exposure.
+- **Intraoperative findings:** soft tissue condition, collateral/PCL status, extensor mechanism, metallosis, synovitis, osteolytic cavities, membrane samples.
+- **Bone defect:** intraoperative AORI confirmation (femur and tibia); patellar bone stock.
+- **Implant:** brand/model, constraint level (PS/CCK/RHK), component sizes, polyethylene thickness and type, patella management.
+- **Stems:** femoral and tibial; cemented / press-fit; length; diameter.
+- **Augments:** distal femoral, posterior condylar, tibial; sizes.
+- **Metaphyseal fixation:** sleeves and tantalum cones (femur/tibia).
+- **Bone grafting:** impaction, structural allograft, autograft or synthetic.
+- **Cement:** plain vs antibiotic-loaded (type and dose).
+- **Two-stage cases:** Stage 1 findings, spacer type, organism, interim antibiotics, serial ESR/CRP, repeat aspirate, Stage 2 findings and cultures.
+- **Operative data:** operative time, estimated blood loss, intraoperative complications.
+
+**C. POSTOPERATIVE PARAMETERS**
+
+- **Immediate (0–6 weeks):** hospital stay, ICU admission, mobilization day, weight-bearing status, drain output, blood transfusion, postoperative haemoglobin, DVT prophylaxis, wound status, rehabilitation milestones, discharge details.
+- **Follow-up schedule:** 6 weeks, 3 months, 6 months, 1 year, and latest follow-up.
+- **Clinical assessment (each visit):** ROM, KSS (Knee + Function), WOMAC, VAS, stability, extensor mechanism, walking aid, stair climbing, ability to squat / sit cross-legged.
+- **Radiological assessment (each visit):** AP/lateral radiographs; scanogram at 6 months and 1 year; component alignment; radiolucent lines (progressive vs non-progressive); signs of loosening; joint line position; patellar tracking; heterotopic ossification (Brooker).
+- **Complications:** early (infection, DVT/PE, periprosthetic fracture, wound issues, nerve injury, haematoma) and late (late infection, stiffness, instability, aseptic loosening, fracture, extensor mechanism failure, polyethylene/bushing wear, HO, CRPS, persistent pain).
+- **Re-revision:** date, indication, interval, procedure.
+- **Mortality:** cause and relation to surgery.
 
 **Observer reliability:** All radiological measurements will be performed independently by two observers (the co-investigator and a senior orthopaedic surgeon). Inter-observer and intra-observer reliability will be assessed using the intraclass correlation coefficient (ICC) and Cohen's Kappa to minimize measurement bias.
 
@@ -325,7 +367,9 @@ Data analyzed using SPSS version 26.0 (IBM Corp.).
 
 > **Note on analysis scope.** The study is formally powered only for the **primary paired comparison** (pre- vs post-operative KSS). Given the target of ~30 evaluable patients, the subgroup comparisons (Objective 5) and the multivariable regression and Kaplan–Meier survivorship analyses (Objectives 5–6) are **exploratory and hypothesis-generating**: with limited events per variable, regression models will be kept parsimonious (pre-specified, ≤3 predictors) to avoid overfitting, and their findings will be interpreted with caution and reported with confidence intervals rather than as definitive associations.
 
-**5.14 FIGURES INCLUDED:**
+**5.14 FIGURES**
+
+The following figures illustrate the classification systems, implant options, surgical algorithm, study flow, and radiological measurements referenced in this protocol. They are grouped here within the Methodology because each one supports a specific methodological step; a consolidated **List of Figures** is also provided in the preliminary pages. (For the final dissertation, each figure may instead be embedded at its first point of mention in the text.)
 
 - **Figure 1:** AORI Classification of bone defects (Engh & Ammeen, 1999). *[Insert image — source: Instr Course Lect. 1999;48:167–175]*
 - **Figure 2:** Knee Society Roentgenographic Evaluation Zones (Ewald FC. Clin Orthop Relat Res. 1989;(248):9–12).
