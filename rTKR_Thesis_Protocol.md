@@ -23,32 +23,6 @@ SGMC & KEM HOSPITAL
 
 ---
 
-### TITLE PAGE
-
-| Field | Details |
-|-------|---------|
-| **Title of study** | Evaluating Clinico-Radiological Outcomes and Patient Satisfaction Following Revision Total Knee Replacement: A Comprehensive Cohort Study |
-| **Department** | Orthopaedics |
-| **Institution** | Seth G.S. Medical College & K.E.M. Hospital, Parel, Mumbai 400012 |
-| **Candidate (Co-Investigator)** | Dr. Asif Ahmed, Junior Resident (Postgraduate Student) |
-| **MUHS Registration No.** | __________________________ *(to be filled by candidate)* |
-| **Year of registration** | __________ *(to be filled by candidate)* |
-| **Guide (Chief Investigator)** | Dr. Mohan M. Desai, Professor & Head, Department of Orthopaedics |
-| **Co-Guide** | __________________________ *(if applicable)* |
-| **Academic year** | 2026–2027 |
-
-**Signatures**
-
-| Role | Name | Signature | Date |
-|------|------|-----------|------|
-| Candidate / Co-Investigator | Dr. Asif Ahmed | ____________ | ________ |
-| Guide / Chief Investigator | Dr. Mohan M. Desai | ____________ | ________ |
-| Co-Guide (if applicable) | __________________ | ____________ | ________ |
-| Head of Department | Dr. Mohan M. Desai | ____________ | ________ |
-| Dean, Seth G.S.M.C. & K.E.M.H. | __________________ | ____________ | ________ |
-
----
-
 ## INDEX
 
 | S. No | Content | Page No. |
