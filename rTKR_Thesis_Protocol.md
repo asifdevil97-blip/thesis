@@ -151,7 +151,7 @@ This study aims to evaluate the clinico-radiological outcomes and patient satisf
 
 **5.2 STUDY SETTING:** Department of Orthopaedics, Seth G.S. Medical College and KEM Hospital, Parel, Mumbai 400012. This is a tertiary care teaching hospital and a high-volume arthroplasty centre.
 
-**5.3 STUDY DURATION:** July 2026 to June 2028 (approximately 2 years), comprising a retrospective record-review arm and a prospective enrolment arm (see Section 5.5).
+**5.3 STUDY DURATION:** July 2026 to October 2027 (approximately 1.25 years), comprising a retrospective record-review arm and a shorter prospective enrolment arm (see Section 5.5). The compressed timeline is dictated by the candidate's MS (Orthopaedics) term ending in December 2027; accordingly the retrospective arm is expected to contribute the majority of the sample.
 
 **5.4 STUDY POPULATION:** All patients who have undergone or will undergo revision total knee replacement at our institution during the defined study period.
 
@@ -204,8 +204,8 @@ n_recruit = 30 / (1 − 0.20) = 30 / 0.80 = 37.5 ≈ 38 patients
 
 Accordingly, the study aims to **recruit 38 patients** in order to retain a minimum of **30 evaluable patients** at final analysis. This target provides adequate statistical power while remaining consistent with the institutional revision TKR volume during the study period. All consecutive eligible patients will be enrolled (universal/consecutive sampling).
 
-- **Retrospective arm:** Patients who underwent revision TKR from January 2021 to June 2026 with available records and adequate follow-up.
-- **Prospective arm:** Patients undergoing revision TKR from August 2026 to December 2027, followed up for a minimum of 6 months.
+- **Retrospective arm:** Patients who underwent revision TKR from January 2021 to June 2026 with available records and adequate follow-up. Given the compressed timeline (MS term ending December 2027), this arm is expected to provide the majority of evaluable patients, as their follow-up has already matured.
+- **Prospective arm:** Patients undergoing revision TKR from September 2026 to February 2027, each followed up for a minimum of 6 months (last follow-up by ≈ August 2027) so that data are available before final analysis.
 
 Statistical advice has been sought from the Department of Preventive and Social Medicine (Biostatistics), Seth G.S. Medical College and KEM Hospital. The final sample size and power assumptions will be confirmed with the institutional biostatistician prior to IEC submission.
 
@@ -269,7 +269,7 @@ Statistical advice has been sought from the Department of Preventive and Social 
 **5.10 PATIENT FLOW DIAGRAM:**
 
 ```
-All patients undergoing Revision TKR at KEM Hospital (January 2021 – December 2027)
+All patients undergoing Revision TKR at KEM Hospital (January 2021 – August 2027)
         |
         v
 Assessed for Eligibility
@@ -280,7 +280,7 @@ Assessed for Eligibility
 Enrolled / Final Cohort (recruit n = 38; target ≥30 evaluable)
         |
         v
-Retrospective Arm (Jan 2021 – Jun 2026) + Prospective Arm (Aug 2026 – Dec 2027)
+Retrospective Arm (Jan 2021 – Jun 2026) + Prospective Arm (Sep 2026 – Feb 2027)
         |
         v
 Outcome Assessment: Clinical (KSS, WOMAC, VAS, ROM), Radiological (KS zones, alignment),
@@ -402,14 +402,14 @@ The following figures illustrate the classification systems, implant options, su
 | Protocol preparation & IEC submission | June 2026 – July 2026 |
 | IEC approval | August 2026 |
 | Retrospective data collection (Jan 2021 – Jun 2026 cases) | August 2026 – October 2026 |
-| Prospective patient enrollment | September 2026 – December 2027 |
-| Follow-up assessments | Ongoing (September 2026 – March 2028) |
-| Data compilation & entry | January 2028 – February 2028 |
-| Statistical analysis | March 2028 – April 2028 |
-| Thesis writing | April 2028 – June 2028 |
-| Thesis submission to MUHS | As per MUHS examination schedule (≈ mid-2028) |
+| Prospective patient enrollment | September 2026 – February 2027 |
+| Follow-up assessments (minimum 6 months) | September 2026 – August 2027 |
+| Data compilation & entry | July 2027 – August 2027 |
+| Statistical analysis | August 2027 – September 2027 |
+| Thesis writing | September 2027 – October 2027 |
+| Thesis submission to MUHS | By October–November 2027 (before end of MS term, December 2027) |
 
-*(Dates are indicative and will be aligned to the candidate's MUHS examination cycle and the actual date of IEC approval.)*
+*(Timeline compressed to complete before the candidate's MS Orthopaedics term ends in December 2027. **Important:** MUHS generally requires the dissertation to be submitted ~6 months before the final examination; if that applies, submission must move to ≈ mid-2027, in which case the **retrospective arm alone should be powered to meet the sample size** and the prospective arm treated as supplementary. The candidate must confirm the exact submission deadline with the department/MUHS.)*
 
 ---
 

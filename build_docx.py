@@ -209,11 +209,11 @@ def process(lines, page_break_sections=False):
             block = "\n".join(buf)
             if "Assessed for Eligibility" in block:  # patient-flow -> CONSORT flowchart
                 body.append(flowchart([
-                    {"text": "All patients undergoing Revision TKR at KEM Hospital (Jan 2021 \u2013 Dec 2027)"},
+                    {"text": "All patients undergoing Revision TKR at KEM Hospital (Jan 2021 \u2013 Aug 2027)"},
                     {"text": "Assessed for eligibility"},
                     {"text": "EXCLUDED \u2192 incomplete records; <6 months follow-up; declined consent; mega-prosthesis cases; isolated liner exchange", "kind": "note"},
                     {"text": "Enrolled / final cohort (recruit n = 38; target \u2265 30 evaluable)"},
-                    {"text": "Retrospective arm (Jan 2021 \u2013 Jun 2026)  +  Prospective arm (Aug 2026 \u2013 Dec 2027)"},
+                    {"text": "Retrospective arm (Jan 2021 \u2013 Jun 2026)  +  Prospective arm (Sep 2026 \u2013 Feb 2027)"},
                     {"text": "Outcome assessment \u2014 Clinical (KSS, WOMAC, VAS, ROM), Radiological (KS zones, alignment), Patient satisfaction. Time points: 6 wks, 3 mo, 6 mo, 1 yr, latest"},
                     {"text": "Statistical analysis (SPSS v26)"},
                     {"text": "Results & conclusions"},
