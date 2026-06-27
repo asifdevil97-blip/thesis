@@ -52,6 +52,7 @@ def run_xml(text, st):
     if st.get("i"): rpr.append("<w:i/>")
     if st.get("mono"):
         rpr.append('<w:rFonts w:ascii="Consolas" w:hAnsi="Consolas"/><w:sz w:val="18"/>')
+    if st.get("u"): rpr.append('<w:u w:val="single"/>')
     if st.get("color"): rpr.append('<w:color w:val="%s"/>' % st["color"])
     if st.get("sz"): rpr.append('<w:sz w:val="%d"/>' % st["sz"])
     rprx = "<w:rPr>%s</w:rPr>" % "".join(rpr) if rpr else ""
@@ -164,6 +165,63 @@ def image_placeholder(caption, w=None):
     cap = raw_para(run_xml(caption, {"i": True, "sz": 18, "color": "404040"}),
                    '<w:jc w:val="center"/><w:spacing w:after="160"/>')
     return box + cap
+
+# ---------- cover page (matches the departmental thesis-protocol template) ----------
+def _nilbord(*sides):
+    return "<w:tcBorders>%s</w:tcBorders>" % "".join('<w:%s w:val="nil"/>' % s for s in sides)
+
+def _logo_box(text, w):
+    bdr = "".join('<w:%s w:val="dashed" w:sz="6" w:space="4" w:color="A6A6A6"/>' % s
+                  for s in ("top", "left", "bottom", "right"))
+    return ('<w:p><w:pPr><w:jc w:val="center"/><w:pBdr>%s</w:pBdr>'
+            '<w:shd w:val="clear" w:color="auto" w:fill="F2F2F2"/>'
+            '<w:spacing w:before="40" w:after="160"/></w:pPr>%s</w:p>') % (
+        bdr, run_xml(text, {"sz": 16, "color": "767171"}))
+
+def _cline(text, sz, bold=False, underline=False, before=80, after=80):
+    st = {"sz": sz}
+    if bold: st["b"] = True
+    if underline: st["u"] = True
+    return raw_para(run_xml(text, st),
+                    '<w:jc w:val="center"/><w:spacing w:before="%d" w:after="%d"/>' % (before, after))
+
+def cover_header():
+    lw, rw = 2300, PAGE_W - 2300
+    sides = ("top", "left", "bottom", "right")
+    left = '<w:tc><w:tcPr><w:tcW w:w="%d" w:type="dxa"/>%s<w:vAlign w:val="center"/></w:tcPr>%s%s</w:tc>' % (
+        lw, _nilbord(*sides),
+        _logo_box("[ GSMC\u2013KEM college\ncrest logo ]", lw),
+        _logo_box("[ Dept. of\nOrthopaedics emblem ]", lw))
+    right = '<w:tc><w:tcPr><w:tcW w:w="%d" w:type="dxa"/>%s<w:vAlign w:val="center"/></w:tcPr>%s%s</w:tc>' % (
+        rw, _nilbord(*sides),
+        _cline("SETH G. S. MEDICAL COLLEGE &", 30, bold=True, before=0, after=40),
+        _cline("K. E. M. HOSPITAL, PAREL, MUMBAI", 30, bold=True, before=0, after=0))
+    return ('<w:tbl><w:tblPr><w:tblW w:w="%d" w:type="dxa"/><w:tblLayout w:type="fixed"/>'
+            '<w:tblBorders>%s</w:tblBorders></w:tblPr>'
+            '<w:tblGrid><w:gridCol w:w="%d"/><w:gridCol w:w="%d"/></w:tblGrid>'
+            '<w:tr>%s%s</w:tr></w:tbl>') % (
+        PAGE_W, "".join('<w:%s w:val="nil"/>' % s for s in ("top", "left", "bottom", "right", "insideH", "insideV")),
+        lw, rw, left, right)
+
+def cover_page():
+    p = [cover_header(), para()]
+    p.append(_cline("DEPARTMENT OF ORTHOPAEDICS", 28, bold=True, underline=True, before=200, after=160))
+    p.append(_cline("TOPIC", 24, before=80, after=120))
+    p.append(_cline("EVALUATING CLINICO-RADIOLOGICAL OUTCOMES AND PATIENT SATISFACTION "
+                    "FOLLOWING REVISION TOTAL KNEE REPLACEMENT: A COMPREHENSIVE COHORT STUDY",
+                    30, bold=True, before=0, after=200))
+    p.append(_cline("THESIS PROTOCOL", 36, bold=True, before=200, after=160))
+    p.append(_cline("CHIEF INVESTIGATOR", 28, underline=True, before=80, after=60))
+    p.append(_cline("DR MOHAN M. DESAI", 26, bold=True, before=0, after=40))
+    p.append(_cline("PROFESSOR AND HEAD OF THE DEPARTMENT", 24, before=0, after=0))
+    p.append(_cline("DEPARTMENT OF ORTHOPAEDICS", 24, before=0, after=0))
+    p.append(_cline("SGMC & KEM HOSPITAL", 24, before=0, after=120))
+    p.append(_cline("CO INVESTIGATOR", 28, underline=True, before=80, after=60))
+    p.append(_cline("DR ASIF AHMED", 26, bold=True, before=0, after=40))
+    p.append(_cline("JUNIOR RESIDENT", 24, before=0, after=0))
+    p.append(_cline("DEPARTMENT OF ORTHOPAEDICS", 24, before=0, after=0))
+    p.append(_cline("SGMC & KEM HOSPITAL", 24, before=0, after=0))
+    return "".join(p)
 
 # ---------- markdown driver ----------
 HEAD = {1: "Title", 2: "Heading1", 3: "Heading2", 4: "Heading3"}
@@ -318,13 +376,10 @@ def convert(md):
         cover_md, titlepage_md = front[:tp], front[tp:]
 
     out = []
-    # Cover page: centre-aligned
-    _FORCE_ALIGN = "center"
-    out.append('<w:p/>')  # a little top spacing
-    out.append(process(cover_md.split("\n")))
-    _FORCE_ALIGN = None
+    # Cover page: departmental template layout (logos + centred title + investigators)
+    out.append(cover_page())
     out.append(page_break())
-    # Title page (left-aligned tables)
+    # Title page (left-aligned tables: registration + signatures)
     if titlepage_md.strip():
         out.append(process(titlepage_md.split("\n")))
         out.append(page_break())

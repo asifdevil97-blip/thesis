@@ -1,13 +1,25 @@
 # SETH G. S. MEDICAL COLLEGE & K. E. M. HOSPITAL, PAREL, MUMBAI
 ## DEPARTMENT OF ORTHOPAEDICS
 
-### TOPIC
+*(Logos: GSMC–KEM college crest and Department of Orthopaedics emblem to be placed at the top-left of the cover page.)*
+
+**TOPIC**
+
 **EVALUATING CLINICO-RADIOLOGICAL OUTCOMES AND PATIENT SATISFACTION FOLLOWING REVISION TOTAL KNEE REPLACEMENT: A COMPREHENSIVE COHORT STUDY**
 
 **THESIS PROTOCOL**
 
-**Submitted to the Maharashtra University of Health Sciences (MUHS), Nashik**
-**In partial fulfilment of the requirements for the degree of M.S. (Orthopaedics)**
+**CHIEF INVESTIGATOR**
+DR MOHAN M. DESAI
+PROFESSOR AND HEAD OF THE DEPARTMENT
+DEPARTMENT OF ORTHOPAEDICS
+SGMC & KEM HOSPITAL
+
+**CO INVESTIGATOR**
+DR ASIF AHMED
+JUNIOR RESIDENT
+DEPARTMENT OF ORTHOPAEDICS
+SGMC & KEM HOSPITAL
 
 ---
 
