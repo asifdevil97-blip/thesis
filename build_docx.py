@@ -17,6 +17,8 @@ OUT = "/projects/sandbox/rTKR_Thesis_Protocol.docx"
 
 PAGE_W = 9026  # usable twips (A4, 1-inch margins)
 
+_FORCE_ALIGN = None  # when set (e.g. "center"), para() centres text — used for the cover page
+
 def esc(s):
     return (s.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
              .replace('"', "&quot;"))
@@ -50,6 +52,7 @@ def run_xml(text, st):
     if st.get("i"): rpr.append("<w:i/>")
     if st.get("mono"):
         rpr.append('<w:rFonts w:ascii="Consolas" w:hAnsi="Consolas"/><w:sz w:val="18"/>')
+    if st.get("u"): rpr.append('<w:u w:val="single"/>')
     if st.get("color"): rpr.append('<w:color w:val="%s"/>' % st["color"])
     if st.get("sz"): rpr.append('<w:sz w:val="%d"/>' % st["sz"])
     rprx = "<w:rPr>%s</w:rPr>" % "".join(rpr) if rpr else ""
@@ -61,6 +64,8 @@ def runs_xml(text, base=None):
 def para(text="", style=None, ppr_extra="", base=None):
     ppr = []
     if style: ppr.append('<w:pStyle w:val="%s"/>' % style)
+    if _FORCE_ALIGN and "w:jc" not in ppr_extra:
+        ppr.append('<w:jc w:val="%s"/>' % _FORCE_ALIGN)
     ppr.append(ppr_extra)
     pprx = "<w:pPr>%s</w:pPr>" % "".join(ppr) if any(ppr) else ""
     return "<w:p>%s%s</w:p>" % (pprx, runs_xml(text, base) if text else "")
@@ -161,8 +166,131 @@ def image_placeholder(caption, w=None):
                    '<w:jc w:val="center"/><w:spacing w:after="160"/>')
     return box + cap
 
+# ---------- score-composition charts (native Word, no image libs) ----------
+def _bar_item(label, value, scale_max, color, lblw=3000):
+    barw = PAGE_W - lblw
+    filled = max(120, int(round(value / float(scale_max) * barw)))
+    if filled > barw: filled = barw
+    rem = barw - filled
+    nb = _nilbord("top", "left", "bottom", "right")
+    cells = ['<w:tc><w:tcPr><w:tcW w:w="%d" w:type="dxa"/>%s<w:vAlign w:val="center"/></w:tcPr>'
+             '<w:p><w:pPr><w:spacing w:after="0"/></w:pPr>%s</w:p></w:tc>' % (
+                 lblw, nb, run_xml(label, {"sz": 20})),
+             '<w:tc><w:tcPr><w:tcW w:w="%d" w:type="dxa"/>%s'
+             '<w:shd w:val="clear" w:color="auto" w:fill="%s"/><w:vAlign w:val="center"/></w:tcPr>'
+             '<w:p><w:pPr><w:jc w:val="center"/><w:spacing w:after="0"/></w:pPr>%s</w:p></w:tc>' % (
+                 filled, nb, color, run_xml(str(value), {"sz": 18, "b": True, "color": "FFFFFF"}))]
+    grid = '<w:gridCol w:w="%d"/><w:gridCol w:w="%d"/>' % (lblw, filled)
+    if rem > 60:
+        cells.append('<w:tc><w:tcPr><w:tcW w:w="%d" w:type="dxa"/>%s'
+                     '<w:shd w:val="clear" w:color="auto" w:fill="F2F2F2"/></w:tcPr><w:p/></w:tc>' % (rem, nb))
+        grid += '<w:gridCol w:w="%d"/>' % rem
+    allnil = "".join('<w:%s w:val="nil"/>' % s for s in ("top", "left", "bottom", "right", "insideH", "insideV"))
+    return ('<w:tbl><w:tblPr><w:tblW w:w="%d" w:type="dxa"/><w:tblLayout w:type="fixed"/>'
+            '<w:tblBorders>%s</w:tblBorders></w:tblPr><w:tblGrid>%s</w:tblGrid>'
+            '<w:tr>%s</w:tr></w:tbl>') % (PAGE_W, allnil, grid, "".join(cells))
+
+def bar_chart(items, scale_max, footnote=None):
+    out = [_bar_item(lbl, val, scale_max, col) for (lbl, val, col) in items]
+    if footnote:
+        out.append(raw_para(run_xml(footnote, {"i": True, "sz": 18, "color": "595959"}),
+                            '<w:spacing w:before="40" w:after="120"/>'))
+    out.append(para())
+    return "".join(out)
+
+def likert_strip():
+    labels = [("1", "Very dissatisfied", "F8696B"), ("2", "Dissatisfied", "FCE4D6"),
+              ("3", "Neutral", "FFEB9C"), ("4", "Satisfied", "C6E0B4"),
+              ("5", "Very satisfied", "63BE7B")]
+    w = PAGE_W // 5
+    grid = "".join('<w:gridCol w:w="%d"/>' % w for _ in labels)
+    cells = ""
+    for num, desc, color in labels:
+        p = ('<w:p><w:pPr><w:jc w:val="center"/><w:spacing w:after="0"/></w:pPr>%s</w:p>'
+             '<w:p><w:pPr><w:jc w:val="center"/><w:spacing w:before="0" w:after="0"/></w:pPr>%s</w:p>') % (
+            run_xml(num, {"b": True, "sz": 26}), run_xml(desc, {"sz": 16}))
+        cells += ('<w:tc><w:tcPr><w:tcW w:w="%d" w:type="dxa"/>'
+                  '<w:shd w:val="clear" w:color="auto" w:fill="%s"/><w:vAlign w:val="center"/></w:tcPr>%s</w:tc>') % (w, color, p)
+    border = "".join('<w:%s w:val="single" w:sz="8" w:space="0" w:color="FFFFFF"/>' % s
+                     for s in ("top", "left", "bottom", "right", "insideH", "insideV"))
+    return ('<w:tbl><w:tblPr><w:tblW w:w="%d" w:type="dxa"/><w:jc w:val="center"/>'
+            '<w:tblLayout w:type="fixed"/><w:tblBorders>%s</w:tblBorders></w:tblPr>'
+            '<w:tblGrid>%s</w:tblGrid><w:tr><w:trPr><w:trHeight w:val="700"/></w:trPr>%s</w:tr></w:tbl>') % (
+        PAGE_W, border, grid, cells) + para()
+
+def kss_chart():
+    return bar_chart([("Objective Knee Score", 100, "4472C4"),
+                      ("Functional Activity Score", 100, "70AD47"),
+                      ("Patient Satisfaction Score", 40, "ED7D31"),
+                      ("Patient Expectations Score", 15, "FFC000")],
+                     100, footnote="Maximum attainable score per subscale (range 0\u2013100). Higher = better outcome.")
+
+def womac_chart():
+    return bar_chart([("Pain", 20, "C00000"),
+                      ("Stiffness", 8, "ED7D31"),
+                      ("Physical Function", 68, "4472C4"),
+                      ("Total", 96, "7030A0")],
+                     96, footnote="Item maxima (Total range 0\u201396). Higher = worse symptoms.")
+
+# ---------- cover page (matches the departmental thesis-protocol template) ----------
+def _nilbord(*sides):
+    return "<w:tcBorders>%s</w:tcBorders>" % "".join('<w:%s w:val="nil"/>' % s for s in sides)
+
+def _logo_box(text, w):
+    bdr = "".join('<w:%s w:val="dashed" w:sz="6" w:space="4" w:color="A6A6A6"/>' % s
+                  for s in ("top", "left", "bottom", "right"))
+    return ('<w:p><w:pPr><w:jc w:val="center"/><w:pBdr>%s</w:pBdr>'
+            '<w:shd w:val="clear" w:color="auto" w:fill="F2F2F2"/>'
+            '<w:spacing w:before="40" w:after="160"/></w:pPr>%s</w:p>') % (
+        bdr, run_xml(text, {"sz": 16, "color": "767171"}))
+
+def _cline(text, sz, bold=False, underline=False, before=80, after=80):
+    st = {"sz": sz}
+    if bold: st["b"] = True
+    if underline: st["u"] = True
+    return raw_para(run_xml(text, st),
+                    '<w:jc w:val="center"/><w:spacing w:before="%d" w:after="%d"/>' % (before, after))
+
+def cover_header():
+    lw, rw = 2300, PAGE_W - 2300
+    sides = ("top", "left", "bottom", "right")
+    left = '<w:tc><w:tcPr><w:tcW w:w="%d" w:type="dxa"/>%s<w:vAlign w:val="center"/></w:tcPr>%s%s</w:tc>' % (
+        lw, _nilbord(*sides),
+        _logo_box("[ GSMC\u2013KEM college\ncrest logo ]", lw),
+        _logo_box("[ Dept. of\nOrthopaedics emblem ]", lw))
+    right = '<w:tc><w:tcPr><w:tcW w:w="%d" w:type="dxa"/>%s<w:vAlign w:val="center"/></w:tcPr>%s%s</w:tc>' % (
+        rw, _nilbord(*sides),
+        _cline("SETH G. S. MEDICAL COLLEGE &", 30, bold=True, before=0, after=40),
+        _cline("K. E. M. HOSPITAL, PAREL, MUMBAI", 30, bold=True, before=0, after=0))
+    return ('<w:tbl><w:tblPr><w:tblW w:w="%d" w:type="dxa"/><w:tblLayout w:type="fixed"/>'
+            '<w:tblBorders>%s</w:tblBorders></w:tblPr>'
+            '<w:tblGrid><w:gridCol w:w="%d"/><w:gridCol w:w="%d"/></w:tblGrid>'
+            '<w:tr>%s%s</w:tr></w:tbl>') % (
+        PAGE_W, "".join('<w:%s w:val="nil"/>' % s for s in ("top", "left", "bottom", "right", "insideH", "insideV")),
+        lw, rw, left, right)
+
+def cover_page():
+    p = [cover_header(), para()]
+    p.append(_cline("DEPARTMENT OF ORTHOPAEDICS", 28, bold=True, underline=True, before=200, after=160))
+    p.append(_cline("TOPIC", 24, before=80, after=120))
+    p.append(_cline("EVALUATING CLINICO-RADIOLOGICAL OUTCOMES AND PATIENT SATISFACTION "
+                    "FOLLOWING REVISION TOTAL KNEE REPLACEMENT: A COMPREHENSIVE COHORT STUDY",
+                    30, bold=True, before=0, after=200))
+    p.append(_cline("THESIS PROTOCOL", 36, bold=True, before=200, after=160))
+    p.append(_cline("CHIEF INVESTIGATOR", 28, underline=True, before=80, after=60))
+    p.append(_cline("DR MOHAN M. DESAI", 26, bold=True, before=0, after=40))
+    p.append(_cline("PROFESSOR AND HEAD OF THE DEPARTMENT", 24, before=0, after=0))
+    p.append(_cline("DEPARTMENT OF ORTHOPAEDICS", 24, before=0, after=0))
+    p.append(_cline("SGMC & KEM HOSPITAL", 24, before=0, after=120))
+    p.append(_cline("CO INVESTIGATOR", 28, underline=True, before=80, after=60))
+    p.append(_cline("DR ASIF AHMED", 26, bold=True, before=0, after=40))
+    p.append(_cline("JUNIOR RESIDENT", 24, before=0, after=0))
+    p.append(_cline("DEPARTMENT OF ORTHOPAEDICS", 24, before=0, after=0))
+    p.append(_cline("SGMC & KEM HOSPITAL", 24, before=0, after=0))
+    return "".join(p)
+
 # ---------- markdown driver ----------
-HEAD = {1: "Heading1", 2: "Heading2", 3: "Heading3", 4: "Heading4"}
+HEAD = {1: "Title", 2: "Heading1", 3: "Heading2", 4: "Heading3"}
 FIG_RE = re.compile(r"^-\s*\*\*Figure (\d+):\*\*\s*(.*)$")
 
 def is_sep(line):
@@ -184,11 +312,14 @@ def two_stage_flowchart():
         {"text": "Postoperative rehabilitation and clinico-radiological surveillance"},
     ])
 
-def convert(md):
-    lines = md.split("\n")
+def page_break():
+    return '<w:p><w:r><w:br w:type="page"/></w:r></w:p>'
+
+def process(lines, page_break_sections=False):
     body = []
     i = 0
     n = len(lines)
+    section_seen = False
     while i < n:
         line = lines[i]
         s = line.strip()
@@ -200,13 +331,13 @@ def convert(md):
             while j < n and not lines[j].strip().startswith("```"):
                 buf.append(lines[j]); j += 1
             block = "\n".join(buf)
-            if "Assessed for Eligibility" in block:  # patient-flow -> flowchart
+            if "Assessed for Eligibility" in block:  # patient-flow -> CONSORT flowchart
                 body.append(flowchart([
-                    {"text": "All patients undergoing Revision TKR at KEM Hospital (Jan 2020 \u2013 Dec 2026)"},
+                    {"text": "All patients undergoing Revision TKR at KEM Hospital (Jan 2021 \u2013 Aug 2027)"},
                     {"text": "Assessed for eligibility"},
                     {"text": "EXCLUDED \u2192 incomplete records; <6 months follow-up; declined consent; mega-prosthesis cases; isolated liner exchange", "kind": "note"},
                     {"text": "Enrolled / final cohort (recruit n = 38; target \u2265 30 evaluable)"},
-                    {"text": "Retrospective arm (Jan 2020 \u2013 Jan 2025)  +  Prospective arm (Feb 2025 \u2013 Dec 2026)"},
+                    {"text": "Retrospective arm (Jan 2021 \u2013 Jun 2026)  +  Prospective arm (Sep 2026 \u2013 Feb 2027)"},
                     {"text": "Outcome assessment \u2014 Clinical (KSS, WOMAC, VAS, ROM), Radiological (KS zones, alignment), Patient satisfaction. Time points: 6 wks, 3 mo, 6 mo, 1 yr, latest"},
                     {"text": "Statistical analysis (SPSS v26)"},
                     {"text": "Results & conclusions"},
@@ -236,7 +367,12 @@ def convert(md):
         m = re.match(r"^(#{1,4})\s+(.*)$", s)
         if m:
             lvl = len(m.group(1))
-            body.append(para(m.group(2), HEAD[lvl]))
+            extra = ""
+            if page_break_sections and lvl == 2:
+                if section_seen:
+                    extra = '<w:pageBreakBefore/>'
+                section_seen = True
+            body.append(para(m.group(2), HEAD[lvl], ppr_extra=extra))
             i += 1
             continue
 
@@ -265,6 +401,12 @@ def convert(md):
                                  base={"i": True}))
             elif num == 5:
                 body.append(two_stage_flowchart())
+            elif num == 8:
+                body.append(kss_chart())
+            elif num == 9:
+                body.append(womac_chart())
+            elif num == 10:
+                body.append(likert_strip())
             else:
                 body.append(image_placeholder("Figure %d image to be inserted." % num))
             i += 1
@@ -291,6 +433,32 @@ def convert(md):
 
     return "".join(body)
 
+def convert(md):
+    """Render cover page (centred) + title page + body with page breaks between sections."""
+    global _FORCE_ALIGN
+    idx = md.find("\n## INDEX")
+    if idx == -1:
+        return process(md.split("\n"), page_break_sections=True)
+    front = md[:idx]
+    body_md = md[idx + 1:]
+    tp = front.find("### TITLE PAGE")
+    if tp == -1:
+        cover_md, titlepage_md = front, ""
+    else:
+        cover_md, titlepage_md = front[:tp], front[tp:]
+
+    out = []
+    # Cover page: departmental template layout (logos + centred title + investigators)
+    out.append(cover_page())
+    out.append(page_break())
+    # Title page (left-aligned tables: registration + signatures)
+    if titlepage_md.strip():
+        out.append(process(titlepage_md.split("\n")))
+        out.append(page_break())
+    # Main body with a page break before each numbered section
+    out.append(process(body_md.split("\n"), page_break_sections=True))
+    return "".join(out)
+
 # ---------- package ----------
 def styles_xml():
     def style(sid, name, props, ppr="", default=False):
@@ -300,27 +468,27 @@ def styles_xml():
     sty = [
         '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>',
         '<w:styles xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">',
-        '<w:docDefaults><w:rPrDefault><w:rPr><w:rFonts w:ascii="Calibri" w:hAnsi="Calibri" w:cs="Calibri"/><w:sz w:val="22"/><w:szCs w:val="22"/></w:rPr></w:rPrDefault>'
-        '<w:pPrDefault><w:pPr><w:spacing w:after="140" w:line="276" w:lineRule="auto"/></w:pPr></w:pPrDefault></w:docDefaults>',
+        '<w:docDefaults><w:rPrDefault><w:rPr><w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Nirmala UI"/><w:sz w:val="24"/><w:szCs w:val="24"/></w:rPr></w:rPrDefault>'
+        '<w:pPrDefault><w:pPr><w:spacing w:after="120" w:line="360" w:lineRule="auto"/></w:pPr></w:pPrDefault></w:docDefaults>',
         style("Normal", "Normal", "", default=True),
         style("Title", "Title",
-              '<w:b/><w:sz w:val="34"/><w:color w:val="1F3864"/>',
+              '<w:b/><w:sz w:val="36"/><w:color w:val="1F3864"/>',
               '<w:jc w:val="center"/><w:spacing w:before="120" w:after="120"/>'),
         style("Heading1", "heading 1",
-              '<w:b/><w:sz w:val="30"/><w:color w:val="1F3864"/>',
+              '<w:b/><w:sz w:val="32"/><w:color w:val="1F3864"/>',
               '<w:spacing w:before="320" w:after="120"/><w:keepNext/>'
               '<w:pBdr><w:bottom w:val="single" w:sz="6" w:space="2" w:color="8EAADB"/></w:pBdr>'),
         style("Heading2", "heading 2",
-              '<w:b/><w:sz w:val="26"/><w:color w:val="2E5496"/>',
+              '<w:b/><w:sz w:val="28"/><w:color w:val="2E5496"/>',
               '<w:spacing w:before="240" w:after="100"/><w:keepNext/>'),
         style("Heading3", "heading 3",
-              '<w:b/><w:sz w:val="24"/><w:color w:val="2E5496"/>',
+              '<w:b/><w:sz w:val="26"/><w:color w:val="2E5496"/>',
               '<w:spacing w:before="200" w:after="80"/><w:keepNext/>'),
         style("Heading4", "heading 4",
-              '<w:b/><w:sz w:val="22"/><w:color w:val="404040"/>',
+              '<w:b/><w:sz w:val="24"/><w:color w:val="404040"/>',
               '<w:spacing w:before="160" w:after="60"/><w:keepNext/>'),
         style("Quote", "Quote",
-              '<w:sz w:val="20"/><w:color w:val="404040"/>',
+              '<w:sz w:val="22"/><w:color w:val="404040"/>',
               '<w:ind w:left="340"/><w:spacing w:before="80" w:after="160"/>'
               '<w:shd w:val="clear" w:color="auto" w:fill="F7F7F0"/>'
               '<w:pBdr><w:left w:val="single" w:sz="18" w:space="6" w:color="C9A227"/></w:pBdr>'),
@@ -333,10 +501,24 @@ def document_xml(body):
             '<w:document xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main" '
             'xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships">'
             '<w:body>%s'
-            '<w:sectPr><w:pgSz w:w="11906" w:h="16838"/>'
+            '<w:sectPr>'
+            '<w:footerReference w:type="default" r:id="rId2"/>'
+            '<w:pgSz w:w="11906" w:h="16838"/>'
             '<w:pgMar w:top="1440" w:right="1440" w:bottom="1440" w:left="1440" '
             'w:header="708" w:footer="708" w:gutter="0"/></w:sectPr>'
             '</w:body></w:document>') % body
+
+def footer_xml():
+    return ('<?xml version="1.0" encoding="UTF-8" standalone="yes"?>'
+            '<w:ftr xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main" '
+            'xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships">'
+            '<w:p><w:pPr><w:jc w:val="center"/></w:pPr>'
+            '<w:r><w:fldChar w:fldCharType="begin"/></w:r>'
+            '<w:r><w:instrText xml:space="preserve"> PAGE </w:instrText></w:r>'
+            '<w:r><w:fldChar w:fldCharType="separate"/></w:r>'
+            '<w:r><w:t>1</w:t></w:r>'
+            '<w:r><w:fldChar w:fldCharType="end"/></w:r>'
+            '</w:p></w:ftr>')
 
 CT = ('<?xml version="1.0" encoding="UTF-8" standalone="yes"?>'
       '<Types xmlns="http://schemas.openxmlformats.org/package/2006/content-types">'
@@ -344,6 +526,7 @@ CT = ('<?xml version="1.0" encoding="UTF-8" standalone="yes"?>'
       '<Default Extension="xml" ContentType="application/xml"/>'
       '<Override PartName="/word/document.xml" ContentType="application/vnd.openxmlformats-officedocument.wordprocessingml.document.main+xml"/>'
       '<Override PartName="/word/styles.xml" ContentType="application/vnd.openxmlformats-officedocument.wordprocessingml.styles+xml"/>'
+      '<Override PartName="/word/footer1.xml" ContentType="application/vnd.openxmlformats-officedocument.wordprocessingml.footer+xml"/>'
       '<Override PartName="/docProps/core.xml" ContentType="application/vnd.openxmlformats-package.core-properties+xml"/>'
       '</Types>')
 
@@ -356,6 +539,7 @@ RELS = ('<?xml version="1.0" encoding="UTF-8" standalone="yes"?>'
 DOC_RELS = ('<?xml version="1.0" encoding="UTF-8" standalone="yes"?>'
             '<Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships">'
             '<Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/styles" Target="styles.xml"/>'
+            '<Relationship Id="rId2" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/footer" Target="footer1.xml"/>'
             '</Relationships>')
 
 def core_xml():
@@ -381,6 +565,7 @@ def main():
         z.writestr("word/document.xml", doc)
         z.writestr("word/_rels/document.xml.rels", DOC_RELS)
         z.writestr("word/styles.xml", styles_xml())
+        z.writestr("word/footer1.xml", footer_xml())
         z.writestr("docProps/core.xml", core_xml())
     print("Wrote", OUT, "(%d bytes)" % os.path.getsize(OUT))
 
